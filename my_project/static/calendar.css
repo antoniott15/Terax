@@ -1,0 +1,114 @@
+
+body{
+  font-family: 'Quicksand', sans-serif;
+
+}
+
+.sidebar h2{
+	text-align: center;
+	padding: 10px;
+	margin: 0px;
+	background: #2a2a2a;
+}
+
+.sidebar{
+	position: absolute;
+	margin-top: 58px;
+	width: 250px;
+	height: 100%;
+	background: #333;
+	color: #fff;
+	outline: 1px solid #2a2a2a;
+	font-size: 18px;
+}
+
+
+.sidebar li{
+	outline: 1px solid #2a2a2a;
+ 	transition: all 0.3s;
+}
+
+.sidebar a{
+	color: #fff;
+	display: block;
+	padding: 10px;
+	text-decoration: none;
+}
+
+.sidebar ul{
+	list-style: none;
+	padding: 0px;
+	text-align: center;
+	margin: 0px;
+}
+
+.sidebar li:hover{
+	background: #444;
+	border-left: 5px solid #eee;
+}
+
+.contenido{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: #eee;
+	padding-top: 58px;
+ 	transition: all 0.3s;
+	box-sizing: border-box;
+
+}
+
+.abrir{
+	transform: translateX(250px);
+}
+
+.card-body{
+text-align: center;
+text-decoration: none;
+
+}
+h5{
+  text-decoration: none;
+  text-align: center;
+}
+
+
+
+.dx-tooltip-wrapper .dx-overlay-content .dx-popup-content {
+    padding: 14px;
+}
+
+.showtime-preview > div:first-child {
+    font-size: 24px;
+    white-space: normal;
+}
+
+.showtime-preview > div:not(:first-child) {
+    font-size: 18px;
+    white-space: normal;
+}
+
+.movie-tooltip .movie-info {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: top;
+    text-align: left;
+}
+
+.movie-tooltip img {
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.movie-tooltip .movie-title {
+    font-size: 1.5em;
+    line-height: 40px;
+}
+
+.long-title h3 {
+		font-family: 'Quicksand', sans-serif;
+    font-weight: 200;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+}
