@@ -112,23 +112,23 @@
               </td>
           </tr>
           <h2>
-              <label for="validationCustom06">Usted se encuentra en: </label></h2>
+              <label for="validationCustom06">Cual es su grado Academico: </label></h2>
           <select name ="grado" class="grado" id="validationCustom06" required >
           <option value="" disabled selected hidden>Grado Academico</option>
-          <option value="Primaria">Primaria</option>
-          <option value="Secundaria">Secundaria</option>
-          <option value="Pre">Pre</option>
           <option value="Universitario">Universitario</option>
-          <div class="invalid-feedback mb-2">
-            Por favor seleccione  un grado Academico.
-            </div>
+          <option value="Licenciado">Licenciado</option>
+          <option value="Magister">Magister</option>
+          <option value="Doctor">Doctor</option>
         </select>
-        <table class="text-white mb-0">
+        <div class="invalid-feedback">
+          Por favor seleccione  un grado Academico.
+          </div>
+        <table class="text-white">
           <tr>
               <td>
-                 <label for="validationCustom07">Institucion: </label>
+                 <label for="validationCustom07">Ultima institucion en la que ha enseñado: </label>
                   <input type = "text" name="institucion" id="validationCustom07" class="form-control" placeholder="Colegio/Universidad/Pre" value="" required>
-                  <div class="invalid-feedback mb-2">
+                  <div class="invalid-feedback">
                     Por favor seleccione la institucion a la que pertenece.
                     </div>
               </td>

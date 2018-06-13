@@ -73,11 +73,10 @@
                   </tr>
 
               </table>
+            <label for="validationCustom03"><h2>Seleccione al menos 1 curso:</h2>  <h3>(El primer seleccionado será el principal)</h3></label>
 
-          <h2>Que materias ha enseñado o sabe:</h2>
-
-           <div class="form-group">
-            <select id="materias" name="materias" class="form-control selectpicker materias" multiple >
+             <div class="form-group">
+             <select id="materias" name="materias" id="validationCustom03" class="form-control selectpicker materias" multiple  required>
              <option value="Matematicas">Matematicas</option>
              <option value="Fisica">Fisica</option>
              <option value="Quimica">Quimica</option>
@@ -92,7 +91,9 @@
              <option value="Programacion">Programacion</option>
             </select>
            </div>
-
+           <div class="valid-feedback mb-5">
+             Por favor, Seleccione al menos 1 curso.
+             </div>
 
       </div>
         </div>

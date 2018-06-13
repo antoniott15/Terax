@@ -2,11 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Terax</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script>window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery-3.1.0.min.js"%3E%3C/script%3E'))</script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/enter1.css"></link>
     <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/17.2.7/css/dx.spa.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/17.2.7/css/dx.common.css" />
     <link rel="dx-theme" data-theme="generic.light" href="https://cdn3.devexpress.com/jslib/17.2.7/css/dx.light.css" />
@@ -15,8 +14,61 @@
     <script src="../static/tabla_profesores.js"></script>
 </head>
 <body class="dx-viewport">
+<div class="login" action = "/dologin" method = 'POST'>
+ <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top mb-0">
+ <div class = "container">
+ <a class="navbar-brand display" href="/">Terax</a>
+ <div class="logo">
+       <img src="../static/logo.png">
+ </div>
+ <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+ </button>
+ <div class="collapse navbar-collapse" id="navbarNav">
+   <ul class="navbar-nav ml-auto">
+     <li class="nav-item active">
+       <a class="nav-link" href="/enter">Inicio</a>
+     </li>
+     <li class="nav-item">
+       <a class="nav-link calendario" href="/calendar">Calendario</a>
+     </li>
+     <li class="nav-item">
+       <a class="nav-link profesores_cursos" href="#sidebar">Profesores</a>
+     </li>
+   </ul>
+ </div>
+</div>
+</nav>
+</div>
+
+<div class="sidebar">
+	<h2>Cursos</h2>
+	<ul>
+		<li class="text-white"><a href="/tabla_profesores">Matematicas</a></li>
+		<li><a href="/tabla_profesores">Fisica</a></li>
+		<li><a href="/tabla_profesores">Quimica</a></li>
+		<li><a href="/tabla_profesores">Geografia</a></li>
+		<li><a href="/tabla_profesores">Historia</a></li>
+		<li><a href="/tabla_profesores">Ingles</a></li>
+		<li><a href="/tabla_profesores">Lenguaje</a></li>
+		<li><a href="/tabla_profesores">Termodinamica</a></li>
+		<li><a href="/tabla_profesores">Electronica</a></li>
+		<li><a href="/tabla_profesores">Programacion</a></li>
+		<li><a href="/tabla_profesores">Estatica</a></li>
+		<li><a href="/tabla_profesores">Dinamica</a></li>
+	</ul>
+
+</div>
+
+	<div class="contenido">
     <div class="demo-container">
         <div id="grid"></div>
     </div>
+</div>
+<script type="text/javascript">
+$('.profesores_cursos').on('click', function(){
+  $('.contenido').toggleClass('abrir');
+          });
+</script>
 </body>
 </html>

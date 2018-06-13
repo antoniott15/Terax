@@ -19,8 +19,8 @@ class User(Base):
 	id = Column('id', Integer, primary_key=True)
 	username = Column('username', String(15))
 	password = Column('password', String(15))
-	email = Column('email', String(20), unique=True)
-	ciudad = Column('ciudad', String(40))
+	email = Column('email', String(20))
+	direccion = Column('direccion', String(40))
 	telf = Column('telf', String(10))
 	grado = Column('grado',String(20))
 	institucion = Column('institucion', String(20))
@@ -116,6 +116,18 @@ def users_profesores():
 		usuarios_array.append(us)
 	return Response(json.dumps(usuarios_array, cls=AlchemyEncoder), mimetype='application/json')
 
+@app.route('/cursos', methods = ['GET'])
+def cursos():
+	Session = sessionmaker(bind=engine)
+	session=Session()
+	users2=session.query(User3)
+	usuarios_array=[]
+
+	for us in users2:
+		usuarios_array.append(us)
+	return Response(json.dumps(usuarios_array, cls=AlchemyEncoder), mimetype='application/json')
+
+
 
 @app.route('/users_alumnos', methods = ['GET'])
 def users_alumnos():
@@ -188,6 +200,10 @@ def registro_profesor():
 def next():
     return render_template("next.html")
 
+@app.route('/matematicas')
+def matematicas():
+	return render_template('matematicas.html')
+
 
 @app.route('/enter')
 def enter():
@@ -228,12 +244,12 @@ def create_user_profesores():
     session = Session()
     print("users")
     if request.form['password'] == request.form['password2']:
-        new_user = User(username = request.form['username'], password = request.form['password'],email = request.form['email'],ciudad = request.form["ciudad"], telf=request.form["telf"], grado=request.form["grado"], institucion=request.form["institucion"])
+        new_user = User(username = request.form['username'], password = request.form['password'],email = request.form['email'],direccion = request.form["direccion"], telf=request.form["telf"], grado=request.form["grado"], institucion=request.form["institucion"])
         new_user2 = User2(edad = request.form['edad'], gender = request.form['gender'])
         session.add(new_user)
         session.add(new_user2)
         session.commit()
-        return print('nada')
+        return redirect("/next")
 
 
 @app.route("/doregister_parte2_profesores", methods=['POST'])
