@@ -285,7 +285,7 @@ def dologin2():
     user = session.query(User).filter_by(email = request.form['email']).first()
     if user:
         if user.password == request.form['password']:
-            return redirect('/')
+            return redirect('/enter')
         else:
            return redirect('/')
     else:
