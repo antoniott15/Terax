@@ -1,0 +1,38 @@
+body{
+	margin: 0;
+	padding: 0;
+	background: url(background.jpg);
+	background-size: cover;
+	background-position: center;
+	font-family: 'Quicksand', sans-serif;
+}
+
+.loginbox{
+	width: 280px;
+	height: 480px;
+	background: rgba(0,0,0,0.75);
+	color: #fff;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	border-radius: 3%;
+	transform: translate(-50%,-50%);
+	box-sizing: border-box;
+	padding: 70px 30px;
+}
+
+.avatar{
+	width: 95px;
+	height: 95px;
+	border-radius: 75%;
+	position: absolute;
+	top: -50px;
+	left: 115px;
+}
+
+h1{
+	margin: 0;
+	padding: 0 0 20px;
+	text-align: center;
+	font-size: 15px;
+}

@@ -249,6 +249,32 @@ def ayuda():
     return redirect('/')
 
 
+@app.route('/myprofile_alumno', methods=['GET'])
+def myprofile_alumno():
+    Session = sessionmaker(bind=engine)
+    sessiondb = Session()
+    usuario = sessiondb.query(User4).filter(User4.id==session['loged']).first()
+    username = str(usuario.username)
+    email = str(usuario.email)
+    direccion = str(usuario.direccion)
+    grado = str(usuario.grado)
+    institucion = str(usuario.institucion)
+    edad = str(usuario.edad)
+    return render_template("my_profile_alumno.html",username=username,email=email,grado=grado,institucion=institucion,edad=edad, direccion=direccion)
+
+@app.route('/myprofile_profesor', methods=['GET'])
+def myprofile_profesor():
+    Session = sessionmaker(bind=engine)
+    sessiondb = Session()
+    usuario = sessiondb.query(User).filter(User.id==session['login']).first()
+    username = str(usuario.username)
+    email = str(usuario.email)
+    telf = str(usuario.telf)
+    grado = str(usuario.grado)
+    institucion = str(usuario.institucion)
+    return render_template("my_profile_profesor.html",username=username,email=email,telf=telf,grado=grado,institucion=institucion)
+
+
 #OPCIONES
 @app.route('/opciones_de_registro')
 def registrarse_op():
