@@ -70,8 +70,16 @@ select{
 		border-color: black;
 }
 
-.logo1{
-	margin-top: -40px;
-	margin-left: 20px;
-	border: none;
+.edad{
+margin-top: 10px;
+}
+
+.box h2{
+	margin-top: 5px;
+	font-size: 20px;
+}
+
+.box h3{
+	margin-top: 2px;
+	font-size: 10px;
 }

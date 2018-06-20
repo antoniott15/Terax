@@ -1,14 +1,13 @@
 $(function(){
-    var url2 = "http://localhost:5000/users";
-
+    var url2 = "http://localhost:5000/editar_perfil_profesor";
 
     $("#grid").dxDataGrid({
         dataSource: DevExpress.data.AspNet.createStore({
             key: "id",
-            loadUrl: url2 ,
-            insertUrl: url2 ,
-            updateUrl: url2 ,
-            deleteUrl: url2 ,
+            loadUrl: url2,
+            insertUrl: url2,
+            updateUrl: url2,
+            deleteUrl: url2,
             onBeforeSend: function(method, ajaxOptions) {
                 ajaxOptions.xhrFields = { withCredentials: true };
             }
@@ -30,21 +29,15 @@ $(function(){
             allowedPageSizes: [8, 12, 20]
         },
         columns: [{
-            dataField: "id",
-            dataType: "number",
-            allowEditing: true
-        }, {
             dataField: "username"
-        }, {
-            dataField: "password"
         }, {
             dataField: "email"
         },{
+            dataField: "materias"
+        },{
+            dataField: "telf"
+        },{
             dataField: "grado"
-        },{
-            dataField: "direccion"
-        },{
-            dataField: "edad"
         },{
             dataField: "institucion"
         }],

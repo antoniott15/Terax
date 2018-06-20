@@ -73,27 +73,17 @@
                   </tr>
 
               </table>
-            <label for="validationCustom03"><h2>Seleccione al menos 1 curso:</h2>  <h3>(El primer seleccionado será el principal)</h3></label>
 
-             <div class="form-group">
-             <select id="materias" name="materias" id="validationCustom03" class="form-control selectpicker materias" multiple  required>
-             <option value="Matematicas">Matematicas</option>
-             <option value="Fisica">Fisica</option>
-             <option value="Quimica">Quimica</option>
-             <option value="Geografia">Geografia</option>
-             <option value="Historia">Historia</option>
-             <option value="Ingles">Ingles</option>
-             <option value="Lenguaje">Lenguaje</option>
-             <option value="Termodinamica">Termodinamica</option>
-             <option value="Estatica">Estatica</option>
-             <option value="Dinamica">Dinamica</option>
-             <option value="Electronica">Electronica</option>
-             <option value="Programacion">Programacion</option>
-            </select>
-           </div>
-           <div class="valid-feedback mb-5">
-             Por favor, Seleccione al menos 1 curso.
-             </div>
+              <tr>
+                  <td>
+                  <label for="validationCustom05">Direccion: </label>
+                   <input type = "text" name="direccion" class ="ciudad form-control"  id="validationCustom05" placeholder="Av/Jr/Lt/Psje/Dpto" value="" required>
+                   <div class="invalid-feedback">
+                     Por favor, ponga su direccion completa.
+                     </div>
+                  </td>
+              </tr>
+          
 
       </div>
         </div>
@@ -176,31 +166,6 @@
 </section>
 </form>
 <script>
-$(document).ready(function(){
- $('#materias').multiselect({
-  nonSelectedText: 'Materias',
-  buttonWidth:'350px'
- });
-
- $('#materias_form').on('submit', function(event){
-  event.preventDefault();
-  var form_data = $(this).serialize();
-  $.ajax({
-   url:"app.py",
-   method:"POST",
-   data:form_data,
-   success:function(data)
-   {
-    $('#materias option:selected').each(function(){
-     $(this).prop('selected', false);
-    });
-    $('#materias').multiselect('refresh');
-    alert(data);
-   }
-  });
- });
-});
-
 
 
 (function() {

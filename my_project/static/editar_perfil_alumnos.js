@@ -1,13 +1,13 @@
 $(function(){
-    var url2 = "http://localhost:5000/users";
+    var url2 = "http://localhost:5000/editar_perfil_alumnos";
 
 
     $("#grid").dxDataGrid({
         dataSource: DevExpress.data.AspNet.createStore({
             key: "id",
             loadUrl: url2 ,
-            insertUrl: url2 ,
-            updateUrl: url2 ,
+            insertUrl: url2,
+            updateUrl: url2,
             deleteUrl: url2 ,
             onBeforeSend: function(method, ajaxOptions) {
                 ajaxOptions.xhrFields = { withCredentials: true };
@@ -29,11 +29,7 @@ $(function(){
             showPageSizeSelector: true,
             allowedPageSizes: [8, 12, 20]
         },
-        columns: [{
-            dataField: "id",
-            dataType: "number",
-            allowEditing: true
-        }, {
+        columns: [ {
             dataField: "username"
         }, {
             dataField: "password"

@@ -27,13 +27,16 @@
  <div class="collapse navbar-collapse" id="navbarNav">
    <ul class="navbar-nav ml-auto">
      <li class="nav-item active">
-       <a class="nav-link" href="/enter">Inicio</a>
+       <a class="nav-link" href="">Hola,</a>
      </li>
      <li class="nav-item">
-       <a class="nav-link calendario" href="/calendar">Calendario</a>
+       <a class="nav-link calendario" href="">{{username}}</a>
      </li>
      <li class="nav-item">
-       <a class="nav-link profesores_cursos" href="#sidebar">Profesores</a>
+       <a class="nav-link calendario" href="/atras_alumno">Atras</a>
+     </li>
+     <li class="nav-item">
+       <a class="nav-link profesores_cursos" href="/">Logout</a>
      </li>
    </ul>
  </div>
@@ -41,34 +44,10 @@
 </nav>
 </div>
 
-<div class="sidebar">
-	<h2>Cursos</h2>
-	<ul>
-		<li class="text-white"><a href="/tabla_profesores">Matematicas</a></li>
-		<li><a href="/tabla_profesores">Fisica</a></li>
-		<li><a href="/tabla_profesores">Quimica</a></li>
-		<li><a href="/tabla_profesores">Geografia</a></li>
-		<li><a href="/tabla_profesores">Historia</a></li>
-		<li><a href="/tabla_profesores">Ingles</a></li>
-		<li><a href="/tabla_profesores">Lenguaje</a></li>
-		<li><a href="/tabla_profesores">Termodinamica</a></li>
-		<li><a href="/tabla_profesores">Electronica</a></li>
-		<li><a href="/tabla_profesores">Programacion</a></li>
-		<li><a href="/tabla_profesores">Estatica</a></li>
-		<li><a href="/tabla_profesores">Dinamica</a></li>
-	</ul>
-
-</div>
-
 	<div class="contenido">
     <div class="demo-container">
         <div id="grid"></div>
     </div>
-</div>
-<script type="text/javascript">
-$('.profesores_cursos').on('click', function(){
-  $('.contenido').toggleClass('abrir');
-          });
-</script>
+
 </body>
 </html>
