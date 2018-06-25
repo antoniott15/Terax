@@ -13,8 +13,12 @@
     <script src="https://cdn3.devexpress.com/jslib/17.2.7/js/dx.all.js"></script>
     <script src="https://unpkg.com/devextreme-aspnet-data@1.3.0"></script>
     <script src="../static/editar_perfil_profesores.js"></script>
+    <link rel="stylesheet" href="/static/editar_profesor.css"></link>
+    <script src="../static/editar_perfil_texto_profe.js"></script>
+
+
 </head>
-  <body>
+<body class="dx-viewport">
 
    <div class="login" action = "/dologin" method = 'POST'>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top mb-0">
@@ -45,10 +49,28 @@
   </div>
   </nav>
 </div>
-<body class="dx-viewport">
+
     <div class="demo-container">
         <div id="grid"></div>
-    </div>
+ </div>
+
+ <footer id="contact">
+   <div class = "container mt-5">
+     <div class = "row">
+       <div class = "col-md-6">
+         <div class = "contact-content-left">
+           <h1 class="text-dark">Terax necesita tu descripcion!</h1>
+           <p class="text-dark">En el cuadro de abajo describe tu informacion! Asi los alumnos podran tener una informacion extra de tí!</p>
+           <img src="/static/pensar.png">
+         </div>
+       </div>
+     </div>
+   </div>
+ </footer>
+
+ <div class="demo-container">
+     <div id="grid2"></div>
+</div>
 
 	</body>
 	</html>

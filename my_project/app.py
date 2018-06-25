@@ -32,6 +32,7 @@ class User(Base):
     telf = Column('telf', String(10))
     grado = Column('grado',String(20))
     institucion = Column('institucion', String(20))
+    texto = Column('texto', String(400))
 
 class User2(Base):
 	__tablename__='user_profesor2'
@@ -272,7 +273,8 @@ def myprofile_profesor():
     telf = str(usuario.telf)
     grado = str(usuario.grado)
     institucion = str(usuario.institucion)
-    return render_template("my_profile_profesor.html",username=username,email=email,telf=telf,grado=grado,institucion=institucion)
+    texto = str(usuario.texto)
+    return render_template("my_profile_profesor.html",username=username,email=email,telf=telf,grado=grado,institucion=institucion, texto=texto)
 
 
 #OPCIONES
@@ -385,49 +387,50 @@ def editar_profe():
 def editar_perfil_profesor():
 	Session = sessionmaker(bind=engine)
 	sessiondb=Session()
-	users2=sessiondb.query(User).filter(User.id==session['login'])
-	usuarios_array=[]
-	for us in users2:
-		usuarios_array.append(us)
-	return Response(json.dumps(usuarios_array, cls=AlchemyEncoder), mimetype='application/json')
+	users=sessiondb.query(User).filter(User.id==session['login'])
+	usuarios2_array=[]
+	for us in users:
+		usuarios2_array.append(us)
+	return Response(json.dumps(usuarios2_array, cls=AlchemyEncoder), mimetype='application/json')
+
 
 @app.route('/editar_perfil_profesor', methods = ['DELETE'])
-def remove_perfil_prof():
+def remove_profesor():
 	id = request.form['key']
 	Session = sessionmaker(bind=engine)
 	sessiondb=Session()
-	users2 = sessiondb.query(User).filter(User.id ==id)
-	for user2 in users2:
-		sessiondb.delete(user2)
+	users = sessiondb.query(User).filter(User.id ==id)
+	for user in users:
+		sessiondb.delete(user)
 	sessiondb.commit()
 	return "Deleted User"
 
 
 @app.route('/editar_perfil_profesor', methods = ['POST'])
-def create_perfil_prof():
-	d =  json.loads(request.form['values'])
-	print(d)
-	user2 = User(
-		id=d['id'],
-		usuario=d['usuario'],
-		password=d['password']
+def create_profesor():
+	c =  json.loads(request.form['values'])
+	print(c)
+	user = User(
+		id=c['id'],
+		usuario=c['usuario'],
+		password=c['password']
 	)
 	Session = sessionmaker(bind=engine)
 	sessiondb=Session()
-	sessiondb.add(user2)
+	sessiondb.add(user)
 	sessiondb.commit()
 	return 'Created User'
 
 @app.route('/editar_perfil_profesor', methods = ['PUT'])
-def update_perfil_prof():
+def update_profesor():
 	Session = sessionmaker(bind=engine)
 	sessiondb=Session()
 	id = request.form['key']
-	user2 = session.query(User).filter(User.id == id).first()
-	d =  json.loads(request.form['values'])
-	for key in d.keys():
-		setattr(user2, key, d[key])
-	sessiondb.add(user2)
+	user = sessiondb.query(User).filter(User.id == id).first()
+	c =  json.loads(request.form['values'])
+	for key in c.keys():
+		setattr(user, key, c[key])
+	sessiondb.add(user)
 	sessiondb.commit()
 	return 'Updated User'
 
