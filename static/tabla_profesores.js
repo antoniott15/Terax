@@ -1,5 +1,5 @@
 $(function(){
-    var url1 = "http://localhost:5000/users_profesores";
+    var url1 = "http://terax.herokuapp.com/users_profesores";
 
     $("#grid").dxDataGrid({
         dataSource: DevExpress.data.AspNet.createStore({

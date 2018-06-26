@@ -72,7 +72,7 @@ class Ayuda(Base):
 #CIERRE DE TABLAS
 
 #CONEXION A BASE DE DATOS
-engine = create_engine('sqlite:////Users/antoniotoche/Desktop/my_project/database.db', echo = True)
+engine = create_engine('sqlite:///database.db', echo = True)
 Base.metadata.create_all(bind=engine)
 #CIERRE DE LA CONECCION
 

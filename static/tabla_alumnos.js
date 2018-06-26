@@ -1,5 +1,5 @@
 $(function(){
-    var url2 = "http://localhost:5000/users";
+    var url2 = "http://terax.herokuapp.com/users";
 
 
     $("#grid").dxDataGrid({

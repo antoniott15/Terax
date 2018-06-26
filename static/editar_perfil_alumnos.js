@@ -1,5 +1,5 @@
 $(function(){
-    var url2 = "http://localhost:5000/editar_perfil_alumnos";
+    var url2 = "http://terax.herokuapp.com/editar_perfil_alumnos";
 
 
     $("#grid").dxDataGrid({
