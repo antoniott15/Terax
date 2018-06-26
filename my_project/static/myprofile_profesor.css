@@ -1,19 +1,19 @@
 body{
 	margin: 0;
 	padding: 0;
-	background: url(background.jpg);
+	background: url(background.jpeg);
 	background-size: cover;
 	background-position: center;
 	font-family: 'Quicksand', sans-serif;
+	color: black;
 }
 
 .loginbox{
-	width: 280px;
+	width: 320px;
 	height: 480px;
-	background: rgba(0,0,0,0.75);
-	color: #fff;
+	background: rgba(31,190,221,0.25);
 	top: 50%;
-	left: 25%;
+	left: 35%;
 	position: absolute;
 	border-radius: 3%;
 	transform: translate(-50%,-50%);
@@ -25,10 +25,9 @@ body{
 .loginbox2{
 	width: 280px;
 	height: 480px;
-	background: rgba(0,0,0,0.75);
-	color: #fff;
+	background: rgba(31,190,221,0.25);
 	top: 50%;
-	left: 75%;
+	left: 65%;
 	position: absolute;
 	border-radius: 3%;
 	transform: translate(-50%,-50%);
@@ -41,5 +40,5 @@ body{
 	margin: 0;
 	padding: 0 0 20px;
 	text-align: center;
-	font-size: 30px;
+	font-size: 25px;
 }

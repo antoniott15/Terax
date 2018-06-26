@@ -1,7 +1,7 @@
 body{
 	margin: 0;
 	padding: 0;
-	background: url(background.jpg);
+	background: url(background.jpeg);
 	background-size: cover;
 	background-position: center;
 	font-family: 'Quicksand', sans-serif;
@@ -11,7 +11,7 @@ body{
 
 	width: 300px;
 	height: 520px;
-	background: rgba(0,0,0,0.5);
+	background: rgba(31,190,221,0.25);
 	color: #fff;
 	top: 50%;
 	left: 50%;
