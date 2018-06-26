@@ -1,0 +1,96 @@
+DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> Terax </title>
+		<link rel="icon" type="image\png" href="../static/logo.png">
+		<link rel="stylesheet" type="text/css" href="/static/myprofile_alumno.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+		<style>@import url('https://fonts.googleapis.com/css?family=Quicksand:700');</style>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+</head>
+  <body>
+
+   <div class="login" action = "/dologin" method = 'POST'>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top mb-0">
+    <div class = "container">
+    <a class="navbar-brand display" href="">Terax</a>
+    <div class="logo">
+          <img src="../static/logo.png">
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="">Hola,</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link calendario" href="">{{username}}</a>
+        </li>
+				<li class="nav-item">
+					<a class="nav-link calendario" href="/atras_alumno">Atras</a>
+				</li>
+        <li class="nav-item">
+          <a class="nav-link profesores_cursos" href="/">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  </nav>
+</div>
+
+<div id="textBox1">
+    <div class = "loginbox">
+
+        <h1>Mi Perfil</h1>
+    <div>
+			<label for="">Nombres:
+			<div class="ml-3">
+				 {{username}}
+			</div>
+    	</div>
+      <div>
+			</label>
+			<label for="">Email:
+				<div class="ml-3">
+					{{email}}
+				</div>
+			</label>
+    </div>
+    <div>
+			<label for="">Direccion:
+			<div class="ml-3">
+				{{direccion}}
+			</div>
+     </div>
+			</label>
+     <div>
+			<label for="">Grado:
+			<div class="ml-3 mr-5">
+				{{grado}}
+			</div>
+		</label>
+     </div>
+     <div>
+			<label for="">Institucion:
+				<div class="ml-3 mr-5">
+					{{institucion}}
+				</div>
+			</label>
+       </div>
+     <div>
+			<label for="">Edad:
+			<div class="ml-3 mr-5">
+				{{edad}}
+			</div>
+			</label>
+    </div>
+</div>
+ </div>
+	</body>
+</html>

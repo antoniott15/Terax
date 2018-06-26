@@ -1,0 +1,293 @@
+<html>
+<head>
+    <title>Registro</title>
+    <link rel="icon" type="image\png" href="../static/logo.png">
+    <link rel="stylesheet" type="text/css" href="/static/register_profesor.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>@import url('https://fonts.googleapis.com/css?family=Quicksand:700');</style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+   <script>window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery-3.1.0.min.js"%3E%3C/script%3E'))</script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css"/>
+
+    </head>
+</head>
+<body>
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top mb-0">
+  <div class = "container">
+  <a class="navbar-brand text-white" href="/">Terax</a>
+  <div class="logo">
+        <img src="/static/logo.png">
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link text-white" href="/">Menu principal</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="/opciones_de_ingreso">Entrar</a>
+      </li>
+    </ul>
+  </div>
+  </div>
+  </nav>
+
+
+<section id="registro" class="registro">
+<form action="/doregister_profesores" method="POST" class="needs-validation" novalidate>
+  <div class="box">
+    <h1>Docentes</h1>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="registro-content-right">
+
+              <table class="text-white">
+            <td>
+              <tr>
+                <label for="validationCustom01">Nombres y apellidos:</label>
+                 <input type = "text"  class ="username form-control" id="validationCustom01" name="username" placeholder="Nombres y Apellidos" value="" required>
+                <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                  </tr>
+                  </td>
+
+                  <label for="validationCustom02">Contraseña:</label>
+                  <input type = "password" name="password" class ="password form-control mb-1" id="validationCustom02" placeholder="***********" value="" required>
+                  <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                    <td>
+                        <label for="validationCustom03">Repita la contraseña:</label>
+                       <input type = "password" class ="password2 form-control mb-1" name="password2" id="validationCustom03" placeholder="***********" value="" required>
+                       <div class="invalid-feedback">
+                               Repita la contraseña porfavor.
+                          </div>
+                    </td>
+                    <tr>
+                        <td>
+                            <label for="validationCustom04">Email: </label>
+                             <input type = "email" name="email" class ="email form-control" id="validationCustom04" placeholder="*********@gmail.com" value="" required>
+                             <div class="invalid-feedback">
+                               Ponga un correo valido.
+                               </div>
+                        </td>
+                    </tr>
+              </table>
+              <label for="validationCustom11"><h2>Seleccione al menos 1 curso:</h2>  <h3>(El primer seleccionado será el principal)</h3></label>
+
+               <div class="form-group">
+               <select id="materias" name="materias" id="validationCustom11" class="form-control selectpicker materias" multiple  required>
+               <option value="Matematicas">Matematicas</option>
+               <option value="Fisica">Fisica</option>
+               <option value="Quimica">Quimica</option>
+               <option value="Geografia">Geografia</option>
+               <option value="Historia">Historia</option>
+               <option value="Ingles">Ingles</option>
+               <option value="Lenguaje">Lenguaje</option>
+               <option value="Termodinamica">Termodinamica</option>
+               <option value="Estatica">Estatica</option>
+               <option value="Dinamica">Dinamica</option>
+               <option value="Electronica">Electronica</option>
+               <option value="Programacion">Programacion</option>
+              </select>
+             </div>
+             <div class="valid-feedback mb-5">
+               Por favor, Seleccione al menos 1 curso.
+               </div>
+
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="registro-content-left mb-4">
+          <tr>
+              <td>
+                 <label for="validationCustom06">Numero de contacto(TELF O CEL): </label>
+             <input type = "text" name="telf" class ="ciudad form-control" id="validationCustom06"  placeholder="********" value="" required>
+             <div class="invalid-feedback">
+               Por favor seleccione un numero telefonico.
+               </div>
+              </td>
+          </tr>
+          <h2>
+              <label for="validationCustom06">Cual es su grado Academico: </label></h2>
+          <select name ="grado" class="grado" id="validationCustom06" required >
+          <option value="" disabled selected hidden>Grado Academico</option>
+          <option value="Universitario">Universitario</option>
+          <option value="Licenciado">Licenciado</option>
+          <option value="Magister">Magister</option>
+          <option value="Doctor">Doctor</option>
+        </select>
+        <div class="invalid-feedback">
+          Por favor seleccione  un grado Academico.
+          </div>
+        <table class="text-white">
+          <tr>
+              <td>
+                 <label for="validationCustom07">Ultima institucion en la que ha enseñado: </label>
+                  <input type = "text" name="institucion" id="validationCustom07" class="form-control" placeholder="Colegio/Universidad/Pre" value="" required>
+                  <div class="invalid-feedback">
+                    Por favor seleccione la institucion a la que pertenece.
+                    </div>
+              </td>
+          </tr>
+      </table>
+
+          <h2>Usted es:</h2>
+
+          <label class="radio-inline"><input class ="gender" type="radio" name="gender" value="hombre">
+            <div class="logo1">
+                  <img src="/static/male_icon.png">
+            </div></label>
+          <label class="radio-inline"><input class ="gender" type="radio" name="gender" value="mujer">
+            <div class="logo1">
+                 <img src="/static/female_icon.png">
+           </div></label>
+
+
+
+
+          <h2>Cuantos años tienes:</h2>
+          <select class="edad" name="edad" required>
+          <option value="" disabled selected hidden>Edad</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+          <option value="24">24</option>
+          <option value="25">25</option>
+          <option value="26">26</option>
+          <option value="27">27</option>
+          <option value="28">28</option>
+          <option value="29">29</option>
+          <option value="30">30</option>
+          <option value="31">31</option>
+          <option value="32">32</option>
+          <option value="33">33</option>
+          <option value="34">34</option>
+          <option value="35">35</option>
+          <option value="36">36</option>
+          <option value="37">37</option>
+          <option value="38">38</option>
+          <option value="39">39</option>
+          <option value="40">40</option>
+          <option value="41">41</option>
+          <option value="42">42</option>
+          <option value="43">43</option>
+          <option value="44">44</option>
+          <option value="45">45</option>
+          <option value="46">46</option>
+          <option value="47">47</option>
+          <option value="48">48</option>
+          <option value="49">49</option>
+          <option value="50">50</option>
+          <option value="51">51</option>
+          <option value="52">52</option>
+          <option value="53">53</option>
+          <option value="54">54</option>
+          <option value="55">55</option>
+          <option value="56">56</option>
+          <option value="57">57</option>
+          <option value="58">58</option>
+          <option value="59">59</option>
+          <option value="60">60</option>
+          <option value="61">61</option>
+          <option value="62">62</option>
+          <option value="63">63</option>
+          <option value="64">64</option>
+          <option value="65">65</option>
+          <option value="66">66</option>
+          <option value="67">67</option>
+          <option value="68">68</option>
+          <option value="69">69</option>
+          <option value="70">70</option>
+          <option value="71">71</option>
+          <option value="72">72</option>
+          <option value="73">73</option>
+          <option value="74">74</option>
+          <option value="75">75</option>
+          </select>
+      </div>
+      <input class="btn btn-outline-secondary" type="submit" value="Siguente"></input>
+    </div>
+    </div>
+  </div>
+</form>
+</div>
+</section>
+
+<script>
+
+$(document).ready(function(){
+ $('#materias').multiselect({
+  nonSelectedText: 'Materias',
+  buttonWidth:'350px'
+ });
+
+ $('#materias_form').on('submit', function(event){
+  event.preventDefault();
+  var form_data = $(this).serialize();
+  $.ajax({
+   url:"app.py",
+   method:"POST",
+   data:form_data,
+   success:function(data)
+   {
+    $('#materias option:selected').each(function(){
+     $(this).prop('selected', false);
+    });
+    $('#materias').multiselect('refresh');
+    alert(data);
+   }
+  });
+ });
+});
+
+
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
+
+</body>
+</html>

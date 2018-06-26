@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Terax</title>
+    <link rel="icon" type="image\png" href="../static/logo.png">
+		<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/enter1.css"></link>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery-3.1.0.min.js"%3E%3C/script%3E'))</script>
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/18.1.3/css/dx.spa.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/18.1.3/css/dx.common.css" />
+    <link rel="dx-theme" data-theme="generic.light" href="https://cdn3.devexpress.com/jslib/18.1.3/css/dx.light.css" />
+    <script src="https://cdn3.devexpress.com/jslib/18.1.3/js/dx.all.js"></script>
+    <script src="https://unpkg.com/devextreme-aspnet-data@1.4.5"></script>
+    <link rel="stylesheet" type ="text/css" href ="../static/calendar.css" />
+    <script src="../static/index.js"></script>
+</head>
+<body class="dx-viewport">
+
+	<div class="login" action = "/dologin_profesores" method = 'POST'>
+	 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top mb-0">
+	 <div class = "container">
+	 <a class="navbar-brand display" href="">Terax</a>
+	 <div class="logo">
+				 <img src="../static/logo.png">
+	 </div>
+	 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		 <span class="navbar-toggler-icon"></span>
+	 </button>
+	 <div class="collapse navbar-collapse" id="navbarNav">
+		 <ul class="navbar-nav ml-auto">
+       <li class="nav-item active">
+         <a class="nav-link" href="/myprofile_profesor">Hola {{grado}},</a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link calendario" href="/myprofile_profesor">{{username}}</a>
+       </li>
+      <li class="nav-item">
+        <a class="nav-link calendario" href="/atras_profesor">Atras</a>
+      </li>
+       <li class="nav-item">
+         <a class="nav-link profesores_cursos" href="/">Logout</a>
+       </li>
+		 </ul>
+	 </div>
+ </div>
+ </nav>
+</div>
+
+
+
+	<div class="contenido">
+
+    <div class="demo-container">
+        <div id="scheduler"></div>
+    </div>
+
+
+	</div>
+
+		<script type="text/javascript">
+		$('.profesores_cursos').on('click', function(){
+			$('.contenido').toggleClass('abrir');
+							});
+		</script>
+</body>
+</html>

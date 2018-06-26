@@ -1,0 +1,44 @@
+body{
+	margin: 0;
+	padding: 0;
+	background: url(background.jpeg);
+	background-size: cover;
+	background-position: center;
+	font-family: 'Quicksand', sans-serif;
+	color: black;
+}
+
+.loginbox{
+	width: 320px;
+	height: 480px;
+	background: rgba(31,190,221,0.25);
+	top: 50%;
+	left: 35%;
+	position: absolute;
+	border-radius: 3%;
+	transform: translate(-50%,-50%);
+	box-sizing: border-box;
+	padding: 70px 30px;
+}
+
+
+.loginbox2{
+	width: 280px;
+	height: 480px;
+	background: rgba(31,190,221,0.25);
+	top: 50%;
+	left: 65%;
+	position: absolute;
+	border-radius: 3%;
+	transform: translate(-50%,-50%);
+	box-sizing: border-box;
+	padding: 70px 30px;
+}
+
+
+.loginbox h1{
+	margin: 0;
+	padding: 0 0 20px;
+	text-align: center;
+	font-size: 25px;
+}
