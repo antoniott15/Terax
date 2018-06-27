@@ -12,6 +12,11 @@ $(function(){
                 ajaxOptions.xhrFields = { withCredentials: true };
             }
         }),
+        editing: {
+            allowUpdating: true,
+            allowDeleting: true,
+            allowAdding: true
+        },
         remoteOperations: {
             sorting: true,
             paging: true
