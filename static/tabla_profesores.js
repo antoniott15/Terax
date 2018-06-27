@@ -1,13 +1,14 @@
 $(function(){
-    var url1 = "http://terax.herokuapp.com/users_profesores";
+    var url2 = "http://terax.herokuapp.com/users_profesores";
+
 
     $("#grid").dxDataGrid({
         dataSource: DevExpress.data.AspNet.createStore({
             key: "id",
-             loadUrl: url1 ,
-             insertUrl: url1 ,
-             updateUrl: url1 ,
-             deleteUrl: url1 ,
+            loadUrl: url2 ,
+            insertUrl: url2 ,
+            updateUrl: url2 ,
+            deleteUrl: url2 ,
             onBeforeSend: function(method, ajaxOptions) {
                 ajaxOptions.xhrFields = { withCredentials: true };
             }
@@ -32,22 +33,22 @@ $(function(){
             dataField: "id",
             dataType: "number",
             allowEditing: true
-        },{
-            dataField: "username"
-        },{
-            dataField: "password"
-        },{
-            dataField: "texto"
-        },{
-            dataField: "email"
-        },{
-            dataField: "materias"
-        },{
-            dataField: "telf"
-        },{
-            dataField: "grado"
-        },{
-            dataField: "institucion"
-        }],
+          },{
+              dataField: "username"
+          },{
+              dataField: "password"
+          },{
+              dataField: "texto"
+          },{
+              dataField: "email"
+          },{
+              dataField: "materias"
+          },{
+              dataField: "telf"
+          },{
+              dataField: "grado"
+          },{
+              dataField: "institucion"
+          }],
     }).dxDataGrid("instance");
 });
