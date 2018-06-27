@@ -222,11 +222,7 @@ def update_user():
 #TABLAS PARA JSON EN HTML
 @app.route('/tabla_profesores')
 def tabla_profesores():
-    Session = sessionmaker(bind=engine)
-    sessiondb = Session()
-    usuario = sessiondb.query(User4).filter(User4.id==session['loged']).first()
-    username = str(usuario.username)
-    return render_template("tabla_profesores.html",username=username)
+    return render_template("tabla_profesores.html")
 
 @app.route('/tabla_alumnos')
 def tabla_alumnos():

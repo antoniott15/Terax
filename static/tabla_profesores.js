@@ -4,7 +4,10 @@ $(function(){
     $("#grid").dxDataGrid({
         dataSource: DevExpress.data.AspNet.createStore({
             key: "id",
-            loadUrl: url1,
+             loadUrl: url1 ,
+             insertUrl: url1 ,
+             updateUrl: url1 ,
+             deleteUrl: url1 ,
             onBeforeSend: function(method, ajaxOptions) {
                 ajaxOptions.xhrFields = { withCredentials: true };
             }
@@ -21,8 +24,16 @@ $(function(){
             allowedPageSizes: [8, 12, 20]
         },
         columns: [{
+            dataField: "id",
+            dataType: "number",
+            allowEditing: true
+        },{
             dataField: "username"
-        }, {
+        },{
+            dataField: "password"
+        },{
+            dataField: "texto"
+        },{
             dataField: "email"
         },{
             dataField: "materias"
