@@ -17,8 +17,6 @@ app.config['SECRET_KEY'] = 'Thisisasecret'
 
 Base = declarative_base()
 
-login_manager = LoginManager()
-login_manager.init_app(app)
 
 
 #Declaracion de tablas para la base de datos
@@ -567,6 +565,59 @@ def dologin3():
     else:
         return redirect('/')
 #CIERRE
+
+@app.route('/mobile_login_profesores', methods = ['POST'])
+def mobile_login():
+    obj = request.get_json(silent=True)
+    print(obj.keys())
+    email = obj['email']
+    password = obj['password']
+    Session = sessionmaker(bind=engine)
+    sessiondb=Session()
+    user = sessiondb.query(User).filter_by(email = email).first()
+    print("User ", user)
+    if user != None:
+        print("USer password",user.email, user.password, password)
+        if user.password == password:
+            user2_id=str(user.id)
+            session['login'] = user.id
+        print("RESPONSE:", json.dumps({'response': True, "id": user.id}))
+        return Response(json.dumps({'response': True, "id": user.id}, cls=AlchemyEncoder), mimetype='application/json')
+    else:
+        return Response(json.dumps({'response': False}, cls=AlchemyEncoder), mimetype='application/json')
+
+
+@app.route('/enter_profesor_mobile', methods =['POST'])
+def enter_profesor_mobile():
+    return render_template("enter_profesor.html")
+
+
+@app.route('/mobile_login_alumnos', methods = ['POST'])
+def mobile_login_alumnos():
+   obj = request.get_json(silent=True)
+   print(obj)
+   email = obj['email']
+   password = obj['password']
+   Session = sessionmaker(bind=engine)
+   sessiondb=Session()
+   user = sessiondb.query(User).filter_by(email = email).first()
+   print("User ", user)
+   if user != None:
+       print("USer password",user.email, user.password, password)
+       if user.password == password:
+           user2_id=str(user.id)
+           session['login'] = user.id
+       print("RESPONSE:", json.dumps({'response': True, "id": user.id}))
+       return Response(json.dumps({'response': True, "id": user.id}, cls=AlchemyEncoder), mimetype='application/json')
+   else:
+       return Response(json.dumps({'response': False}, cls=AlchemyEncoder), mimetype='application/json')
+
+
+
+@app.route('/enter_alumnos_mobile', methods =['POST'])
+def enter_alumnos_mobile():
+    return render_template("enter_alumnos.html")
+
 
 
 
