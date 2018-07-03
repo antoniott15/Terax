@@ -587,7 +587,7 @@ def mobile_login():
         return Response(json.dumps({'response': False}, cls=AlchemyEncoder), mimetype='application/json')
 
 
-@app.route('/enter_profesor_mobile', methods =['POST'])
+@app.route('/enter_profesor_mobile')
 def enter_profesor_mobile():
     return render_template("enter_profesor.html")
 
@@ -614,7 +614,7 @@ def mobile_login_alumnos():
 
 
 
-@app.route('/enter_alumnos_mobile', methods =['POST'])
+@app.route('/enter_alumnos_mobile')
 def enter_alumnos_mobile():
     return render_template("enter_alumnos.html")
 
