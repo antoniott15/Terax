@@ -6,18 +6,10 @@ $(function(){
         dataSource: DevExpress.data.AspNet.createStore({
             key: "id",
             loadUrl: url2 ,
-            insertUrl: url2 ,
-            updateUrl: url2 ,
-            deleteUrl: url2 ,
             onBeforeSend: function(method, ajaxOptions) {
                 ajaxOptions.xhrFields = { withCredentials: true };
             }
         }),
-        editing: {
-            allowUpdating: true,
-            allowDeleting: true,
-            allowAdding: true
-        },
         remoteOperations: {
             sorting: true,
             paging: true
@@ -30,10 +22,6 @@ $(function(){
             allowedPageSizes: [8, 12, 20]
         },
         columns: [{
-            dataField: "id",
-            dataType: "number",
-            allowEditing: true
-          },{
               dataField: "username"
           },{
               dataField: "password"
