@@ -10,10 +10,6 @@ $(function(){
                 ajaxOptions.xhrFields = { withCredentials: true };
             }
         }),
-        remoteOperations: {
-            sorting: true,
-            paging: true
-        },
         paging: {
             pageSize: 12
         },
